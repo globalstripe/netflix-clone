@@ -1,23 +1,14 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
+//<img src={logo} className="App-logo" alt="logo" />
+
+// TMDB API 1b1c3a17bdc49283dd634b6645f1608d
+  
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
     </div>
   );
 }
