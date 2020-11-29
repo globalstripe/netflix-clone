@@ -20,7 +20,9 @@ function Nav() {
         <div className={`nav ${show && "nav_black"}`}>
             <img 
             className="nav_logo"
-            src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/165/4210836165_83a74f26-b573-45a6-a8f6-be7e1cb99b30.png?cb=1606689711"
+            src="https://raw.githubusercontent.com/globalstripe/netflix-clone/main/src/ChrisFlix2.png"
+            //src="https://raw.githubusercontent.com/globalstripe/netflix-clone/main/src/CHRISFLIX.png"
+            //src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/165/4210836165_83a74f26-b573-45a6-a8f6-be7e1cb99b30.png?cb=1606689711"
             //src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1597px-Netflix_2015_logo.svg.png" 
             alt="Netflix Logo!"/>
 
