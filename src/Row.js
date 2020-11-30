@@ -40,23 +40,34 @@ function Row({title, fetchUrl, isLargeRow}) {
     };
 
     const handleClick = (movie) => {
-        console.log("HandleClick: ", movie)
+        // console.log("HandleClick: ", movie)
+        console.log("Movie Title: ", movie?.title)
+        console.log("Movie Poster: ", base_url + movie.poster_path)
+        console.log("Movie Backdrop: ", base_url + movie.backdrop_path)
+        
+
         if (trailerUrl) {
+            console.log("TrailerURL Was: ", trailerUrl)
+            console.log("Hiding the Player")
             setTrailerUrl('');
             //console.log('setting Trailer URL to empty')
             //alert('setting Trailer URL to empty')
         } else {
             movieTrailer(movie?.title || "")
             .then((url) => {
-                // console.log('URL is:', url)
+                console.log('MovieTrailer URL: ', url)
+                console.log("Showing the Player")
                 const urlParams = new URLSearchParams(new URL(url).search);
                 //  ust get the ?v= querystring value!
+
                 setTrailerUrl(urlParams.get("v"));
             })
-            .catch((error) => console.log("MovieTrailerERR", error));
+            .catch((error) => console.log("MovieTrailer: ", error));
         }
 
     };
+
+    console.log("TrailerURL Now: ", trailerUrl)
 
     return (
         <div className="row">
@@ -72,7 +83,7 @@ function Row({title, fetchUrl, isLargeRow}) {
                     className={`row_poster ${isLargeRow && "row_posterLarge"}`}
                     src={`${base_url}${
                         isLargeRow ? movie.poster_path : movie.backdrop_path 
-                    }`} alt={movie.name}/>
+                    }`} alt={movie.title}/>
                 ))}
             
             </div>

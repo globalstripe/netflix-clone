@@ -3,7 +3,7 @@
     top: 0;
     width: 100%;
     padding: 20px;
-    height: 60px;
+    height: 40px;
     z-index: 1;
 
     /* Animations */
@@ -15,18 +15,21 @@
 
 .nav_logo {
     position: fixed;
-    width: 120px;
+    width: 100px;
     left: 20px;
-    object-fit: contain;
+    object-fit: contain;    
 }
 
 .nav_avatar {
     position: fixed;
-    width: 55px;
+    width: 38px;
     right: 20px;
     object-fit: contain;
 }
 
 .nav_black {
-   background-color: #111; 
+    /* Black 50% opacity */
+    /* background-color: rgba(0, 0, 0, 0.5); */
+
+   background-color: rgba(0, 0, 0, 0.7);; 
 }

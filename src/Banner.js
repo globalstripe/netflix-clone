@@ -1,10 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import axios from './axios'
+import {isMobile} from 'react-device-detect';
 import requests from './requests'
 import './banner.css'
 
 function Banner() {
     const [movie, setMovie] = useState([]);
+    const [descriptionCount, setDescriptionCount] = useState([150]);
+
+
 
     useEffect(() => {
         async function fetchData() {
@@ -17,13 +21,25 @@ function Banner() {
                     Math.floor(Math.random() * request.data.results.length - 1)
                 ]
             );
+
+            if (isMobile) {
+                setDescriptionCount('75')
+                // alert("I am a mobile device - setting word count to " + descriptionCount)
+                console.log('Mobile Device')
+            } else {
+               // alert("I'm not a mobile device - setting word count to " + descriptionCount)
+               setDescriptionCount('150')
+               console.log('Browser Device')
+            }
             
+            console.log('Description Length Set to: ', descriptionCount)
+
             return request;
         }
 
         fetchData()
 
-    }, []);
+    }, [descriptionCount]);
 
     console.log("Random Banner Movie", movie)
 
@@ -31,6 +47,8 @@ function Banner() {
     function truncate(str,n) {
             return str?.length > n ? str.substr(0,n -1) + " ..." : str ;
     }
+
+    
 
     return (
         <header className="banner"
@@ -52,7 +70,7 @@ function Banner() {
                 <button className="banner_button">My List</button>
                 </div>
                 <h1 className="banner_descriptiom">
-                    {truncate(movie?.overview,80)}
+                    {truncate(movie?.overview,descriptionCount)}
                 </h1>
                 <div className="banner--fadeBottom"></div>
             </div>
