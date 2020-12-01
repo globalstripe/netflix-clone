@@ -9,16 +9,30 @@ function Banner() {
     const [descriptionCount, setDescriptionCount] = useState([150]);
 
     function refreshPage() {
-        window.location.reload();
-      }
- 
+        
+        fetchData2()
+        //window.location.reload();
 
+        async function fetchData2() {
+
+            console.log("Manual Fetch")
+            const request = await axios.get(requests.fetchNetFlixOriginals);
+            //console.log("Banner: ", request.data.results)
+
+            setMovie(
+                request.data.results[
+                    Math.floor(Math.random() * request.data.results.length - 1)
+                ]
+            );
+        }
+    }
+ 
     useEffect(() => {
 
         const interval = setInterval(() => {
-            //console.log('This will run every second!');
-            fetchData()
-          }, 8000);
+            console.log('This will run every 30 seconds!');
+            //fetchData()
+          }, 30000);
 
         async function fetchData() {
 
@@ -71,6 +85,7 @@ function Banner() {
             ,
             backgroundPosition: "center center"
         }}
+        onClick={ refreshPage }
         >
             <div className="banner_contents">
                 <h1 className="banner_title">
@@ -79,7 +94,7 @@ function Banner() {
                 <div className="banner_buttons">
                 <button className="banner_button">Play</button>
                 <button className="banner_button">My List</button>
-                <button className="banner_button" onClick={ refreshPage }>Next</button>
+                {/*<button className="banner_button" onClick={ refreshPage }>Next</button>*/}
                 </div>
                 <h1 className="banner_descriptiom">
                     {truncate(movie?.overview,descriptionCount)}
