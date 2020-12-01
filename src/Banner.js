@@ -11,8 +11,15 @@ function Banner() {
     function refreshPage() {
         window.location.reload();
       }
+ 
 
     useEffect(() => {
+
+        const interval = setInterval(() => {
+            //console.log('This will run every second!');
+            fetchData()
+          }, 8000);
+
         async function fetchData() {
 
             const request = await axios.get(requests.fetchNetFlixOriginals);
@@ -40,6 +47,8 @@ function Banner() {
         }
 
         fetchData()
+
+        return () => clearInterval(interval);
 
     }, [descriptionCount]);
 
