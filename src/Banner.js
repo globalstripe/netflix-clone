@@ -8,7 +8,9 @@ function Banner() {
     const [movie, setMovie] = useState([]);
     const [descriptionCount, setDescriptionCount] = useState([150]);
 
-
+    function refreshPage() {
+        window.location.reload();
+      }
 
     useEffect(() => {
         async function fetchData() {
@@ -68,6 +70,7 @@ function Banner() {
                 <div className="banner_buttons">
                 <button className="banner_button">Play</button>
                 <button className="banner_button">My List</button>
+                <button className="banner_button" onClick={ refreshPage }>Next</button>
                 </div>
                 <h1 className="banner_descriptiom">
                     {truncate(movie?.overview,descriptionCount)}

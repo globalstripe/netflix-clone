@@ -1,11 +1,18 @@
 // TMDB API 1b1c3a17bdc49283dd634b6645f1608d
-
 import './App.css';
 import Row from './Row'
 import requests from './requests'
 import Banner from './Banner'
 import Nav from './Nav'
+import Profile from './Profile'
+import Footer from './Footer'
+
 function App() {
+
+  function refreshPage() {
+    window.location.reload();
+  }
+  
   return (
     <div className="App">
       <Nav />
@@ -22,6 +29,7 @@ function App() {
       <Row title="Romantic Movies" fetchUrl={requests.fetchRomanceMovies}/>
       <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries}/>
    
+      <Footer></Footer>
     </div>
   );
 }
