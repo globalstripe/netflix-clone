@@ -96,6 +96,7 @@ function Banner() {
                 <button className="banner_button">My List</button>
                 {/*<button className="banner_button" onClick={ refreshPage }>Next</button>*/}
                 </div>
+                <br></br>
                 <h1 className="banner_descriptiom">
                     {truncate(movie?.overview,descriptionCount)}
                 </h1>
@@ -103,7 +104,7 @@ function Banner() {
             </div>
 
             <div className="banner--fadeBottom"></div>
-            
+
             {" "}
 
         </header>

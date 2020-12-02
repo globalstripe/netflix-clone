@@ -16,7 +16,7 @@
 
 .banner_contents {
 margin-left: 30px;
-padding-top: 140px;
+padding-top: 100px;
 height: 190px;
 
 }
@@ -24,7 +24,7 @@ height: 190px;
 .banner_title {
     font-size: 3rem;
     font-weight: 800;
-    padding-bottom: 0.3rem;
+    padding-bottom: 0.8rem;
 
     animation: fadeIn ease 10s;
     -webkit-animation: fadeIn ease 10s;
@@ -72,10 +72,10 @@ height: 190px;
 .banner_description {
     width: 45rem;
     line-height: 1.3;
-    padding-top: 1rem;
+    padding-top: 6.8rem;
     font-size: 0.8rem;
     max-width: 360px;
-    height: 80px;
+    height: 100px;
 
     animation: fadeIn ease 10s;
     -webkit-animation: fadeIn ease 10s;
@@ -97,7 +97,7 @@ height: 190px;
     margin-right: 1rem;
     padding-top: 0.5rem;
     background-color: rgba(51,51,51,0.5);
-    padding-bottom: 0.5rem;
+    padding-bottom: .5rem;
 }
 
 .banner_button:hover {
@@ -108,7 +108,7 @@ height: 190px;
 
 .banner--fadeBottom {
     z-index: -1;
-    height: 8.7rem;
+    height: 11.7rem;
     background-image: linear-gradient(
         180deg,
         transparent,
