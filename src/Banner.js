@@ -25,7 +25,7 @@ function Banner() {
         const interval = setInterval(() => {
             console.log('This will run every 10 seconds!');
             refreshBanner()
-          }, 10000);
+          }, 6000);
 
         async function fetchData() {
 
@@ -99,10 +99,11 @@ function Banner() {
                 <h1 className="banner_descriptiom">
                     {truncate(movie?.overview,descriptionCount)}
                 </h1>
-                <div className="banner--fadeBottom"></div>
+                
             </div>
 
-
+            <div className="banner--fadeBottom"></div>
+            
             {" "}
 
         </header>

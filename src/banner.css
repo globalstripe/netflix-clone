@@ -3,7 +3,7 @@
     object-fit: contain;
     height: 448px;
 
-    transition: 2s ease-in;
+    transition: 3s ease-in;
     opacity: 5;
 }
 
@@ -107,11 +107,12 @@ height: 190px;
 }
 
 .banner--fadeBottom {
-    height: 11.7rem;
+    z-index: -1;
+    height: 8.7rem;
     background-image: linear-gradient(
         180deg,
         transparent,
         rgba(37, 37, 37, 0.61),
-        #111
+        rgb(24, 23, 23)
         )
 }
