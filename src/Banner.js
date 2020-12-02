@@ -7,41 +7,41 @@ import './banner.css'
 function Banner() {
     const [movie, setMovie] = useState([]);
     const [descriptionCount, setDescriptionCount] = useState([150]);
+    const [movieList, setMovieList] = useState([]);
 
-    function refreshPage() {
-        
-        fetchData2()
-        //window.location.reload();
-
-        async function fetchData2() {
-
-            console.log("Manual Fetch")
-            const request = await axios.get(requests.fetchNetFlixOriginals);
-            //console.log("Banner: ", request.data.results)
-
-            setMovie(
-                request.data.results[
-                    Math.floor(Math.random() * request.data.results.length - 1)
-                ]
-            );
-        }
+    function refreshBanner() {
+        console.log("Got Click event from Header")
+        // So refresh just looks at the existing movieList
+        // Doesnt do another axios call to the API
+        //console.log("MovieList", movieList)
+        const randmovie = Math.floor(Math.random() * movieList.length);
+        console.log("Random", randmovie)
+        setMovie(movieList[randmovie])
+        console.log("New Movie", movieList[randmovie])
     }
  
     useEffect(() => {
 
         const interval = setInterval(() => {
-            console.log('This will run every 30 seconds!');
-            //fetchData()
-          }, 30000);
+            console.log('This will run every 10 seconds!');
+            refreshBanner()
+          }, 10000);
 
         async function fetchData() {
 
             const request = await axios.get(requests.fetchNetFlixOriginals);
             //console.log("Banner: ", request.data.results)
 
+            // Only Fetch the Movie List Once - so only one call to the api when app loads.
+            // Store the list in with this setMovieList 
+            // And reference with 'movieList' if you need it again/
+            // Could also add some other function to reload/update / to reload the whole list
+           
+            setMovieList(request.data.results);
+
             setMovie(
                 request.data.results[
-                    Math.floor(Math.random() * request.data.results.length - 1)
+                    Math.floor(Math.random() * request.data.results.length)
                 ]
             );
 
@@ -66,7 +66,7 @@ function Banner() {
 
     }, [descriptionCount]);
 
-    console.log("Random Banner Movie", movie)
+    // console.log("Random Banner Movie", movie)
 
     // Truncate the descriptipon (or anything to n characters  and add ...)
     function truncate(str,n) {
@@ -85,7 +85,7 @@ function Banner() {
             ,
             backgroundPosition: "center center"
         }}
-        onClick={ refreshPage }
+        onClick={ refreshBanner }
         >
             <div className="banner_contents">
                 <h1 className="banner_title">

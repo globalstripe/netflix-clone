@@ -6,7 +6,7 @@ function Footer() {
         <div className="footer">
             <hr></hr>
             <br></br>
-            <footer>&copy; Copyright GlobalStripe 2020</footer>
+            <footer>&copy; Copyright 2020</footer>
             <br></br>
             <hr></hr>
         </div>

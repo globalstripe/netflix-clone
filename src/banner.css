@@ -1,19 +1,72 @@
 .banner {
     color: white;
     object-fit: contain;
-    height: 448px
+    height: 448px;
+
+    transition: 2s ease-in;
+    opacity: 5;
+}
+
+.banner_header {
+    color: white;
+    object-fit: contain;
+    height: 448px;
+
 }
 
 .banner_contents {
 margin-left: 30px;
 padding-top: 140px;
 height: 190px;
+
 }
 
 .banner_title {
     font-size: 3rem;
     font-weight: 800;
     padding-bottom: 0.3rem;
+
+    animation: fadeIn ease 10s;
+    -webkit-animation: fadeIn ease 10s;
+    -moz-animation: fadeIn ease 10s;
+    -o-animation: fadeIn ease 10s;
+    -ms-animation: fadeIn ease 10s;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+@-webkit-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+  }
 }
 
 .banner_description {
@@ -23,6 +76,13 @@ height: 190px;
     font-size: 0.8rem;
     max-width: 360px;
     height: 80px;
+
+    animation: fadeIn ease 10s;
+    -webkit-animation: fadeIn ease 10s;
+    -moz-animation: fadeIn ease 10s;
+    -o-animation: fadeIn ease 10s;
+    -ms-animation: fadeIn ease 10s;
+
 }
 
 .banner_button {
