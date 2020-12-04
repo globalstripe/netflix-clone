@@ -1,36 +1,52 @@
 import React, {useState, useEffect} from 'react'
+import {Route, Link } from "react-router-dom";
+import {BrowserRouter as Router} from 'react-router-dom';
 import axios from './axios'
 import {isMobile} from 'react-device-detect';
 import requests from './requests'
 import './banner.css'
+
+let movieList = ''
 
 function Banner() {
     const [movie, setMovie] = useState([]);
     const [descriptionCount, setDescriptionCount] = useState([150]);
     const [movieList, setMovieList] = useState([]);
 
-    function refreshBanner() {
-        console.log("Got Click event from Header")
-        // So refresh just looks at the existing movieList
-        // Doesnt do another axios call to the API
-        //console.log("MovieList", movieList)
-        const randmovie = Math.floor(Math.random() * movieList.length);
-        console.log("Random", randmovie)
-        setMovie(movieList[randmovie])
-        console.log("New Movie", movieList[randmovie])
-    }
+    // function refreshBanner() {
+    //     console.log("Got Timer event from Header")
+    //     // So refresh just looks at the existing movieList
+    //     // Doesnt do another axios call to the API
+    //     //console.log("MovieList", movieList)
+    //     const randmovie = Math.floor(Math.random() * movieList.length);
+    //     console.log("Random", randmovie)
+    //     setMovie(movieList[randmovie])
+    //     console.log("New Movie", movieList[randmovie])
+    // }
  
     useEffect(() => {
 
+        function refreshBanner() {
+            console.log("Got Timer event from Header")
+            // So refresh just looks at the existing movieList
+            // Doesnt do another axios call to the API
+            //console.log("MovieList", movieList)
+            const randmovie = Math.floor(Math.random() * movieList.length);
+            console.log("Random", randmovie)
+            setMovie(movieList[randmovie])
+            console.log("New Movie", movieList[randmovie])
+        }
+    
         const interval = setInterval(() => {
-            console.log('This will run every 10 seconds!');
+            console.log('Interval Timer - Calling RefreshBanner every 6 seconds!');
             refreshBanner()
           }, 6000);
 
         async function fetchData() {
 
             const request = await axios.get(requests.fetchNetFlixOriginals);
-            //console.log("Banner: ", request.data.results)
+
+            console.log("Banner: ", request.data.results)
 
             // Only Fetch the Movie List Once - so only one call to the api when app loads.
             // Store the list in with this setMovieList 
@@ -73,8 +89,6 @@ function Banner() {
             return str?.length > n ? str.substr(0,n -1) + " ..." : str ;
     }
 
-    
-
     return (
         <header className="banner"
         style={{
@@ -85,19 +99,28 @@ function Banner() {
             ,
             backgroundPosition: "center center"
         }}
-        onClick={ refreshBanner }
+        //onClick={ refreshBanner }
         >
             <div className="banner_contents">
                 <h1 className="banner_title">
                     {movie?.title || movie?.name || movie?.original_name}
                 </h1>
                 <div className="banner_buttons">
-                <button className="banner_button">Play</button>
-                <button className="banner_button">My List</button>
+                <Link to="/BrowserLocation">
+                    <button className="banner_button">Play</button>
+                </Link>
+                <Link to={{
+                    pathname:'/profile',
+                    LinkProps:{
+                        name:'Props passed by Link'
+                    }
+                }}>
+                    <button className="banner_button">My List</button>
+                </Link>
                 {/*<button className="banner_button" onClick={ refreshPage }>Next</button>*/}
                 </div>
                 <br></br>
-                <h1 className="banner_descriptiom">
+                <h1 className="banner_description">
                     {truncate(movie?.overview,descriptionCount)}
                 </h1>
                 

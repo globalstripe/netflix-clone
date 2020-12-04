@@ -67,7 +67,7 @@ function Row({title, fetchUrl, isLargeRow}) {
 
     };
 
-    console.log("TrailerURL Now: ", trailerUrl)
+    // console.log("TrailerURL Now: ", trailerUrl)
 
     return (
         <div className="row">
@@ -87,7 +87,7 @@ function Row({title, fetchUrl, isLargeRow}) {
                 ))}
             
             </div>
-            {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+            {trailerUrl && <YouTube videoId={trailerUrl.toLocaleString()} opts={opts} />}
         </div>
     )
 }

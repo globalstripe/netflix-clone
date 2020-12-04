@@ -6,15 +6,30 @@ import Banner from './Banner'
 import Nav from './Nav'
 import Profile from './Profile'
 import Footer from './Footer'
+import BrowserLocation from './getlocation'
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 function App() {
 
   function refreshPage() {
     window.location.reload();
   }
-  
+
   return (
     <div className="App">
+      <Router>
+      <Switch>
+
+      <Route path="/profile" >
+            <Profile quote='99 Red Balloons' />
+      </Route>
+     
+
+      <Route path="/BrowserLocation">
+        <BrowserLocation />
+        </Route>  
+
+      <Route path="/">
       <Nav />
       <Banner />  
       <Row 
@@ -28,8 +43,12 @@ function App() {
       <Row title="Horror Movies" fetchUrl={requests.fetchHorroMovies}/>
       <Row title="Romantic Movies" fetchUrl={requests.fetchRomanceMovies}/>
       <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries}/>
-   
+      </Route>
+
+        </Switch>
+      </Router>
       <Footer></Footer>
+     
     </div>
   );
 }
