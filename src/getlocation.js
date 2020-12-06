@@ -6,8 +6,8 @@ import './geolocation.css'
 
 function BrowserLocation() {
 
-    const [latitude, setLatitude] = useState(['Checking ...']);
-    const [longtitude, setLongtitude] = useState(['Checking ...']);
+    const [latitude, setLatitude] = useState([55.24]);
+    const [longtitude, setLongtitude] = useState([ -1.76]);
     const [accuracy, setAccuracy] = useState(['Checking ...']);
 
     useEffect(() => { 
@@ -34,9 +34,9 @@ function BrowserLocation() {
   
       function error(err) {
         console.warn(`ERROR(${err.code}): ${err.message}`);
-        setLatitude('Timeout')
-        setLongtitude('Timeout')
-        setAccuracy('Timeout')
+        setLatitude(55.24)
+        setLongtitude( -1.76)
+        setAccuracy('Timeout....')
       }
 
     navigator.geolocation.getCurrentPosition(success, error, options)
@@ -51,8 +51,8 @@ function BrowserLocation() {
         <h1><p>Lattitude:   {latitude} </p> </h1>
         <h1><p>Longtitude:   {longtitude} </p></h1>
         <h1><p>Accuracy:   {accuracy} </p></h1>
+        <br></br>
         <MapContainer lat={latitude} long={longtitude}></MapContainer>
-        <h2>OK We are done here!</h2>
       </div>
     )
 
