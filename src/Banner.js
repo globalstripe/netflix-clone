@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react'
 import {Route, Link } from "react-router-dom";
 import {BrowserRouter as Router} from 'react-router-dom';
 import axios from './axios'
+import { AnimateOnChange } from 'react-animation'
+import { animations } from 'react-animation'
 import {isMobile} from 'react-device-detect';
 import requests from './requests'
 import './banner.css'
@@ -102,13 +104,18 @@ function Banner() {
         //onClick={ refreshBanner }
         >
             <div className="banner_contents">
+
+                <AnimateOnChange durationOut="1500">
                 <h1 className="banner_title">
                     {movie?.title || movie?.name || movie?.original_name}
                 </h1>
+                </AnimateOnChange>
+
                 <div className="banner_buttons">
                 <Link to="/BrowserLocation">
                     <button className="banner_button">Play</button>
                 </Link>
+
                 <Link to={{
                     pathname:'/profile',
                     LinkProps:{
@@ -119,10 +126,13 @@ function Banner() {
                 </Link>
                 {/*<button className="banner_button" onClick={ refreshPage }>Next</button>*/}
                 </div>
+                
                 <br></br>
+                <AnimateOnChange durationOut="1500">
                 <h1 className="banner_description">
                     {truncate(movie?.overview,descriptionCount)}
                 </h1>
+                </AnimateOnChange>
                 
             </div>
 

@@ -10,6 +10,7 @@
     "google-maps-react": "^2.0.6",
     "movie-trailer": "^2.0.6",
     "react": "^17.0.1",
+    "react-animation": "^1.2.2",
     "react-device-detect": "^1.14.0",
     "react-dom": "^17.0.1",
     "react-router": "^5.2.0",

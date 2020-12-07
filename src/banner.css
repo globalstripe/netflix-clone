@@ -19,48 +19,6 @@ margin-left: 30px;
 padding-top: 80px;
 height: 190px;
 
-opacity: 1;
-animation-name: fadeIn;
-animation-duration: 2s;
-animation-delay: 1s;
-
-}
-
-
-@keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-    }
-  }
-
-@-webkit-keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-    }
-}
-
-@-o-keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-    }
-  }
-  
-  @-ms-keyframes fadeIn {
-    0% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-  }
 }
 
 .banner_title {
