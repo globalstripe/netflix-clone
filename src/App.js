@@ -18,16 +18,12 @@ function App() {
   return (
     <div className="App">
       <Router>
-      <Switch>
-
-      <Route path="/profile" >
-            <Profile quote='99 Red Balloons' />
-      </Route>
-     
+      <Switch>     
 
       <Route path="/BrowserLocation">
         <BrowserLocation />
-        </Route>  
+      </Route>  
+      
 
       <Route path="/">
       <Nav />
@@ -43,6 +39,11 @@ function App() {
       <Row title="Horror Movies" fetchUrl={requests.fetchHorroMovies}/>
       <Row title="Romantic Movies" fetchUrl={requests.fetchRomanceMovies}/>
       <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries}/>
+      </Route>
+
+
+      <Route path="/profile" >
+            <Profile quote='99 Red Balloons' />
       </Route>
 
         </Switch>

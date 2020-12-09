@@ -45,15 +45,30 @@ function BrowserLocation() {
 
 
     return (
-      <div className="profile">
-        <Link to="/"><h1>Back</h1></Link><a href='/BrowserLocation'><h1>Reload</h1></a>
-        <h1>Using geolocation JavaScript API in React</h1>
-        <h1><p>Lattitude:   {latitude} </p> </h1>
-        <h1><p>Longtitude:   {longtitude} </p></h1>
-        <h1><p>Accuracy:   {accuracy} </p></h1>
+      <div className="container">
+       
+        <div className="geo_buttons">
+                <Link to="/">
+                    <button className="geo_button">Back</button>
+                </Link>
+
+                <Link to="/BrowserLocation">
+                    <button className="geo_button">Reload</button>
+                </Link>
+              </div>
+         <br></br>
+         <div className="geo_text">
+        <h2>Using geolocation JavaScript API in React</h2>
+        <h3><p>Lattitude:   {latitude} </p> </h3>
+        <h3><p>Longtitude:   {longtitude} </p></h3>
+        <h3><p>Accuracy:   {accuracy} </p></h3>
         <br></br>
-        <MapContainer lat={latitude} long={longtitude}></MapContainer>
+        </div>
+        <div className="gmap">
+        <MapContainer className="gmap" lat={latitude} long={longtitude}></MapContainer>
       </div>
+      </div>
+ 
     )
 
 }

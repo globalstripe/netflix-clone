@@ -92,6 +92,7 @@ function Banner() {
     }
 
     return (
+    
         <header className="banner"
         style={{
             backgroundSize: "cover",
@@ -126,7 +127,7 @@ function Banner() {
                 </Link>
                 {/*<button className="banner_button" onClick={ refreshPage }>Next</button>*/}
                 </div>
-                
+
                 <br></br>
                 <AnimateOnChange durationOut="1500">
                 <h1 className="banner_description">
@@ -141,6 +142,8 @@ function Banner() {
             {" "}
 
         </header>
+      
+     
     )
 }
 

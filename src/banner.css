@@ -7,6 +7,15 @@
     opacity: 5;
 }
 
+.banner_transition {
+  color: white;
+  object-fit: contain;
+  height: 448px;
+
+  transition: 3s ease-in;
+  opacity: 5;
+}
+
 .banner_header {
     color: white;
     object-fit: contain;
