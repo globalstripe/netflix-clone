@@ -47,7 +47,7 @@ body {
   }
 
   .another_div2 {
-    position: relative;
+    position: absolute;
     margin-top: 335px;
     margin-left: 535px;
     padding-top: 0.5rem;
@@ -55,8 +55,7 @@ body {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     border-radius: 0.8vw;
-    width: 490px;
-    height: 190px;
+    height: 90px;
     color: rgb(14, 13, 13);
     background-color: rgba(59, 198, 117, 0.6);
     z-index: 3;
