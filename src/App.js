@@ -8,6 +8,7 @@ import Profile from './Profile'
 import Footer from './Footer'
 import BrowserLocation from './getlocation'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { AnimateOnChange } from 'react-animation'
 
 function App() {
 
@@ -24,8 +25,8 @@ function App() {
         <BrowserLocation />
       </Route>  
       
-
       <Route path="/">
+      
       <Nav />
       <Banner />  
       <Row 
@@ -39,18 +40,22 @@ function App() {
       <Row title="Horror Movies" fetchUrl={requests.fetchHorroMovies}/>
       <Row title="Romantic Movies" fetchUrl={requests.fetchRomanceMovies}/>
       <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries}/>
+      <Footer></Footer>
       </Route>
+      
 
 
       <Route path="/profile" >
             <Profile quote='99 Red Balloons' />
+            <Footer></Footer>
       </Route>
 
         </Switch>
       </Router>
-      <Footer></Footer>
+      
      
     </div>
+
   );
 }
 

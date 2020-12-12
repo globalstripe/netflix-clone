@@ -5,3 +5,12 @@
 .App {
   background-color: #111
 }
+
+
+.fadeInAnimated
+{
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-duration: 2s;
+  animation-delay: 1s;
+}

@@ -6,6 +6,7 @@ import './geolocation.css'
 
 function BrowserLocation() {
 
+
     const [latitude, setLatitude] = useState([55.24]);
     const [longtitude, setLongtitude] = useState([ -1.76]);
     const [accuracy, setAccuracy] = useState(['Checking ...']);
@@ -46,27 +47,31 @@ function BrowserLocation() {
 
     return (
       <div className="container">
-       
-        <div className="geo_buttons">
-                <Link to="/">
-                    <button className="geo_button">Back</button>
-                </Link>
 
-                <Link to="/BrowserLocation">
-                    <button className="geo_button">Reload</button>
-                </Link>
-              </div>
-         <br></br>
-         <div className="geo_text">
-        <h2>Using geolocation JavaScript API in React</h2>
-        <h3><p>Lattitude:   {latitude} </p> </h3>
-        <h3><p>Longtitude:   {longtitude} </p></h3>
-        <h3><p>Accuracy:   {accuracy} </p></h3>
-        <br></br>
+        <div className="geo_button">
+            <Link to=
+                {{ pathname: '/', state: 'flushDeal' }}>
+                <button className="geo_button1">Back</button>
+            </Link>
+
+            <Link to=
+                {{ pathname: '/BrowserLocation', state: 'flushDeal' }}>              
+                <button className="geo_button2">Reload</button>
+            </Link>
+
         </div>
+
         <div className="gmap">
-        <MapContainer className="gmap" lat={latitude} long={longtitude}></MapContainer>
-      </div>
+          <MapContainer className="gmap" lat={latitude} long={longtitude}></MapContainer>
+        </div>
+
+        <div className="geo_text">
+          <h3>Geolocation API</h3>
+          <h3><p>Lattitude:   {latitude} </p> </h3>
+          <h3><p>Longtitude:   {longtitude} </p></h3>
+          <h3><p>Accuracy:   {accuracy} </p></h3>
+        </div>
+
       </div>
  
     )
