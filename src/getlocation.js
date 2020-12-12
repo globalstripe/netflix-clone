@@ -72,6 +72,20 @@ function BrowserLocation() {
           <h3><p>Accuracy:   {accuracy} </p></h3>
         </div>
 
+        <div className="another_div1">
+          <h3>Another Div1</h3>
+          <h3><p>Transparency </p> </h3>
+          <h3><p>OK  </p></h3>
+          <h3><p>GO: </p></h3>
+        </div>
+
+        <div className="another_div2">
+          <h3>Another Div2</h3>
+          <h3><p>Transparency </p> </h3>
+          <h3><p>OK  </p></h3>
+          <h3><p>GO: </p></h3>
+        </div>
+
       </div>
  
     )
